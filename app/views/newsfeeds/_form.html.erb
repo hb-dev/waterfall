@@ -1,0 +1,21 @@
+<%= bootstrap_form_for(@newsfeed, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-8") do |f| %>
+  <%= f.alert_message "Please fix the errors below." %>
+
+  <h3>Basic information</h3>
+  <%= f.text_field :name %>
+  <%= f.text_field :api_key %>
+  <%= f.text_field :channel %>
+  <br />
+  <h3>Options</h3>
+  <%= f.select :material_type, @material_types , include_blank: "All", help: "Display material of this type only." %>
+  <%= f.select :material_order, @material_order_types, help: "Specify the sort order of the newsfeed: publish date (published), latest update (updated) or creation date (created)." %>
+  <%= f.text_field :material_limit, type: :number, min: 0, help: "Set the maximum number of newsitems to be displayed. (Max. 100)" %>
+  <%= f.datetime_select :material_start_at, end_year: Time.now.year, ampm: true, include_blank: true, help: "Only display material created after the given time."  %>
+  <%= f.datetime_select :material_end_at, end_year: Time.now.year, ampm: true, include_blank: true, help: "Only display material created before the given time." %>
+  <div class="form-group">
+    <div class="col-sm-2 col-sm-offset-3"> 
+        <%= f.submit class: "btn btn-success" %>
+    </div>
+  </div>
+
+<% end %>

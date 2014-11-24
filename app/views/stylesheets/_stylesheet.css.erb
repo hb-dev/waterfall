@@ -1,0 +1,21 @@
+<% cache(@stylesheet) do %>
+	<style type="text/css">
+		
+		.news-item .thumbnail {
+			<%= check_value("border-color", @stylesheet.border_color) %>
+		}
+
+		.news-item h4 a {
+	  	<%= check_value("color", @stylesheet.color_header) %>
+	 		<%= check_value("font-family", @stylesheet.font_family_header) %>
+	 		<%= check_value("font-size", @stylesheet.font_size_header) %>
+	 	}	
+
+	 	.news-item p.summary {
+	  	<%= check_value("color", @stylesheet.color) %>
+	 		<%= check_value("font-family", @stylesheet.font_family) %>
+	 		<%= check_value("font-size", @stylesheet.font_size) %>
+	 	}
+
+	</style>
+<% end %>

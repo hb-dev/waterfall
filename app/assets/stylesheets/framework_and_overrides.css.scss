@@ -1,0 +1,58 @@
+// import the CSS framework
+$icon-font-path: "bootstrap-sass-official/assets/fonts/bootstrap/";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+
+
+main {
+  background-color: #fff;
+  padding-bottom: 80px;
+  margin-top: 51px; // accommodate the navbar
+}
+
+.alert-message {
+	margin-top: 20px;
+}
+
+form h3 {
+  margin-bottom: 30px;
+}
+
+.news-item h4 a  {
+  font-weight: bold;
+  color: #333;
+}
+.news-item h4 a:hover {
+  text-decoration: none;
+}
+
+.news-meta {
+	color: #bbb;
+}
+
+.news-item hr {
+	border-style: dotted;
+	border-color: #ddd;
+}
+
+.pressroom-image {
+	text-align: center;
+}
+
+.pressroom-image img { width: 100px;}
+ 
+// Masonry
+ 
+#news-items { margin: 10px auto 0; }
+.news-item {
+	margin-bottom: 10px;
+	width: 100%;
+} 
+ 
+@media (min-width: 768px) {
+	.grid > #news-items .news-item { width: 240px; }
+}
+ 
+@media (min-width: 992px) {
+	.grid > #news-items .news-item { width: 280px; }
+}

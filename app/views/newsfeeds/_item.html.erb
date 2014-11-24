@@ -1,0 +1,16 @@
+<div class="news-item">
+  <div class="thumbnail">        
+    <%= link_to item[:url] do %>
+    	<%= image_tag item[:image_thumbnail_medium], class: "img-responsive" %>
+    <% end %>
+    <div class="caption">
+      <h4><%= link_to item[:header], item[:url] %></h4>
+      <p class="news-meta"><%= item[:type_of_media].humanize%> | <%= datetime_helper(item[:published_at]) %></p>
+      <p class="summary text-justify"><%= truncate(item[:summary], length: 125) %></p>
+      <hr />       
+    	<div class="pressroom-image">
+        <%= image_tag item[:pressroom_image] %>
+      </div>
+    </div>
+  </div>
+</div>

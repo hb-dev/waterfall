@@ -1,0 +1,23 @@
+<%= bootstrap_form_for(@stylesheet, url: stylesheet_path, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-3") do |f| %>
+  <%= f.alert_message "Please fix the errors below." %>
+
+  <h3>Heading</h3>
+  <%= f.select :font_family_header, @font_families, include_blank: "Default" %>
+  <%= f.text_field :font_size_header, help: "Format: 18px - Leave blank for default" %>
+  <%= f.text_field :color_header, class: "colorpicker", help: "Format: #abcdef - Leave blank for default" %>
+
+  <h3>Description</h3>
+  <%= f.select :font_family, @font_families, include_blank: "Default" %>
+  <%= f.text_field :font_size, help: "Format: 18px - Leave blank for default" %>
+  <%= f.text_field :color, class: "colorpicker", help: "Format: #abcdef - Leave blank for default" %>
+
+  <h3>Box</h3>
+  <%= f.text_field :border_color, class: "colorpicker", help: "Format: #abcdef - Leave blank for default" %>
+
+  <div class="form-group">
+    <div class="col-sm-9 col-sm-offset-3"> 
+        <%= f.submit "Save style", class: "btn btn-success" %>
+    </div>
+  </div>
+
+<% end %>

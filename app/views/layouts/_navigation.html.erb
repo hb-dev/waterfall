@@ -1,0 +1,32 @@
+<%# navigation styled for Bootstrap 3.0 %>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Waterfall of News", root_path, class: "navbar-brand" %>
+    </div>
+    <div class="collapse navbar-collapse">
+        <% if account_signed_in? %>
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Newsfeeds', newsfeeds_path %></li>
+          <li><%= link_to 'Settings', stylesheet_path %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">        
+          <li><%= link_to 'Edit account', edit_account_registration_path %></li>
+          <li><%= link_to 'Sign out', destroy_account_session_path, :method=>'delete' %></li>
+        </ul>
+        <% else %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to 'Sign in', new_account_session_path %></li>
+          <li><%= link_to 'Sign up', new_account_registration_path %></li>
+        </ul>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

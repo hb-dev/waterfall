@@ -1,0 +1,18 @@
+<%= page_header(@newsfeed.name) %>
+<% if @error %>
+<div class="alert alert-danger" role="alert">The following error occured while displaying the newsfeed: <strong><%= @error %></strong></div>
+<% else %>
+  <% if @items.empty? %>
+    <div class="alert alert-info" role="alert">No news items were found.</div>
+  <% else %>
+    <div class="grid">
+      <div id="news-items">
+        <% @items.each do |item| %>
+          <%= render 'item', item: item %>
+      	<% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<%= render "stylesheets/stylesheet.css" if @stylesheet %>

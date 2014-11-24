@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="authform col-sm-3 center-block">
+    <%= bootstrap_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f| %>
+      <h3>Sign up</h3>
+      <%= devise_error_messages! %>
+      <%= f.email_field :email, :autofocus => true%>
+      <%= f.password_field :password%>
+      <%= f.password_field :password_confirmation %>
+      <%= f.submit 'Sign up', :class => 'btn btn-success right' %>
+    <% end %>
+  </div>
+</div>
