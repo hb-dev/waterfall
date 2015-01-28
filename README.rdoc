@@ -1,6 +1,4 @@
-== README
-
-MyNewsdesk API Project
+== MyNewsdesk API Project
 
 Sample data in db/seeds.rb
 
